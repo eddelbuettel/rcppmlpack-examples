@@ -11,5 +11,5 @@ License: GPL (>= 2)
 Suggests: tinytest
 Encoding: UTF-8
 RoxygenNote: 7.3.2
-Imports: Rcpp (>= 1.1.0.1)
+Imports: Rcpp (>= 1.1.0)
 LinkingTo: Rcpp, RcppArmadillo, mlpack
