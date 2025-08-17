@@ -11,6 +11,18 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// kMeans
+Rcpp::List kMeans(const arma::mat& data, const int& clusters);
+RcppExport SEXP _rcppmlpackexample_kMeans(SEXP dataSEXP, SEXP clustersSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat& >::type data(dataSEXP);
+    Rcpp::traits::input_parameter< const int& >::type clusters(clustersSEXP);
+    rcpp_result_gen = Rcpp::wrap(kMeans(data, clusters));
+    return rcpp_result_gen;
+END_RCPP
+}
 // linearRegression
 arma::vec linearRegression(const arma::mat& matX, const arma::rowvec& vecY, const double lambda, const bool intercept);
 RcppExport SEXP _rcppmlpackexample_linearRegression(SEXP matXSEXP, SEXP vecYSEXP, SEXP lambdaSEXP, SEXP interceptSEXP) {
@@ -27,6 +39,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_rcppmlpackexample_kMeans", (DL_FUNC) &_rcppmlpackexample_kMeans, 2},
     {"_rcppmlpackexample_linearRegression", (DL_FUNC) &_rcppmlpackexample_linearRegression, 4},
     {NULL, NULL, 0}
 };
