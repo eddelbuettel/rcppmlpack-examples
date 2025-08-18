@@ -21,7 +21,8 @@ randomForest(dataset, labels, pct = 0.3, nclasses = 7L, ntrees = 10L)
 Run a Random Forest Classifier
 }
 \details{
-This function performs a Random Forest classification
+This function performs a Random Forest classification on a subset of the
+standard \sQuote{covertype} data set
 }
 \examples{
 data(covertype_small)                         # see help(covertype_small)
@@ -29,4 +30,7 @@ res <- randomForest(covertype_small[-55,],    # features (already transposed)
                     covertype_small[55,],     # labels now in [0, 6] range
                     0.3)                      # percentage used for testing
 str(res)  # accuracy varies as method is randomized but not seed set here
+}
+\seealso{
+covertype_small
 }

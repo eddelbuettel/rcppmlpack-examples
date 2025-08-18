@@ -27,10 +27,10 @@ kMeans <- function(data, clusters) {
 #' test case for accessing an MLPACK function.
 #'
 #' @title Run a linear regression with optional ridge regression
-#' @param matX A matrix of explanatory variables ('predictors') in standard
-#' R format (i.e. \sQuote{tall and skinny'} to be transposed internally to MLPACK
-#' format (i.e. `\sQuote{short and wide}).
-#' @param vecY A vector of dependent variables ('responses')
+#' @param matX A matrix of explanatory variables (\sQuote{predictors}) in standard
+#' R format (i.e. \sQuote{tall and skinny} to be transposed internally to MLPACK
+#' format (i.e. \sQuote{short and wide}).
+#' @param vecY A vector of dependent variables (\sQuote{responses})
 #' @param lambda An optional ridge parameter, defaults to zero
 #' @param intercept An optional boolean switch about an intercept, default is true.
 #' @return A vector with fitted values
@@ -50,7 +50,8 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
 
 #' Run a Random Forest Classifier
 #'
-#' This function performs a Random Forest classification
+#' This function performs a Random Forest classification on a subset of the
+#' standard \sQuote{covertype} data set
 #'
 #' @title Run a Random Forest classificatio
 #' @param dataset A matrix of explanatory variables, i.e. \dQuote{features}
@@ -58,6 +59,7 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
 #' @param pct A numeric value for the percentage of data to be retained for the test set
 #' @param nclasses An integer value for the number of a distinct values in \code{labels}
 #' @param ntrees An integer value for the number of trees
+#' @seealso covertype_small
 #' @examples
 #' data(covertype_small)                         # see help(covertype_small)
 #' res <- randomForest(covertype_small[-55,],    # features (already transposed)

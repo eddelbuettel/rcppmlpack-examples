@@ -7,11 +7,11 @@
 linearRegression(matX, vecY, lambda = 0, intercept = TRUE)
 }
 \arguments{
-\item{matX}{A matrix of explanatory variables ('predictors') in standard
-R format (i.e. \sQuote{tall and skinny'} to be transposed internally to MLPACK
-format (i.e. `\sQuote{short and wide}).}
+\item{matX}{A matrix of explanatory variables (\sQuote{predictors}) in standard
+R format (i.e. \sQuote{tall and skinny} to be transposed internally to MLPACK
+format (i.e. \sQuote{short and wide}).}
 
-\item{vecY}{A vector of dependent variables ('responses')}
+\item{vecY}{A vector of dependent variables (\sQuote{responses})}
 
 \item{lambda}{An optional ridge parameter, defaults to zero}
 
