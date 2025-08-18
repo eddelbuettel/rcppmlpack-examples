@@ -37,10 +37,26 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// randomForest
+Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels, double pct, int nclasses, int ntrees);
+RcppExport SEXP _rcppmlpackexample_randomForest(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP nclassesSEXP, SEXP ntreesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat >::type dataset(datasetSEXP);
+    Rcpp::traits::input_parameter< const arma::vec >::type labels(labelsSEXP);
+    Rcpp::traits::input_parameter< double >::type pct(pctSEXP);
+    Rcpp::traits::input_parameter< int >::type nclasses(nclassesSEXP);
+    Rcpp::traits::input_parameter< int >::type ntrees(ntreesSEXP);
+    rcpp_result_gen = Rcpp::wrap(randomForest(dataset, labels, pct, nclasses, ntrees));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rcppmlpackexample_kMeans", (DL_FUNC) &_rcppmlpackexample_kMeans, 2},
     {"_rcppmlpackexample_linearRegression", (DL_FUNC) &_rcppmlpackexample_linearRegression, 4},
+    {"_rcppmlpackexample_randomForest", (DL_FUNC) &_rcppmlpackexample_randomForest, 5},
     {NULL, NULL, 0}
 };
 

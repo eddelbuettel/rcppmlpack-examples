@@ -48,3 +48,23 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
     .Call(`_rcppmlpackexample_linearRegression`, matX, vecY, lambda, intercept)
 }
 
+#' Run a Random Forest Classifier
+#'
+#' This function performs a Random Forest classification
+#'
+#' @title Run a Random Forest classificatio
+#' @param dataset A matrix of explanatory variables, i.e. \dQuote{features}
+#' @param labels A vector of the dependent variable as integer values, i.e. \dQuote{labels}
+#' @param pct A numeric value for the percentage of data to be retained for the test set
+#' @param nclasses An integer value for the number of a distinct values in \code{labels}
+#' @param ntrees An integer value for the number of trees
+#' @examples
+#' data(covertype_small)                         # see help(covertype_small)
+#' res <- randomForest(covertype_small[-55,],    # features (already transposed)
+#'                     covertype_small[55,],     # labels now in [0, 6] range
+#'                     0.3)                      # percentage used for testing
+#' str(res)  # accuracy varies as method is randomized but not seed set here
+randomForest <- function(dataset, labels, pct = 0.3, nclasses = 7L, ntrees = 10L) {
+    .Call(`_rcppmlpackexample_randomForest`, dataset, labels, pct, nclasses, ntrees)
+}
+
