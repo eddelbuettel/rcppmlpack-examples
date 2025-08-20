@@ -1,5 +1,5 @@
 
-#include "rcppmlpackexample.h"
+#include "rcppmlpackexamples.h"
 
 #include <mlpack.hpp>
 #include <mlpack/methods/linear_regression/linear_regression.hpp> // particular algorithm used here

@@ -4,3 +4,4 @@
 ^\.github$
 ^local/
 ^\.editorconfig
+.*\.orig$

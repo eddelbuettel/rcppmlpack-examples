@@ -1,5 +1,5 @@
 
-#include "rcppmlpackexample.h"
+#include "rcppmlpackexamples.h"
 
 #include <mlpack.hpp>
 #include <mlpack/methods/kmeans/kmeans.hpp> 	// particular algorithm used here
@@ -23,7 +23,7 @@
 //' cl2 <- kMeans(t(trees),3)
 // [[Rcpp::export]]
 Rcpp::List kMeans(const arma::mat& data, const int& clusters) {
-    
+
     arma::Row<size_t> assignments; 		// to store results
     mlpack::kmeans::KMeans<> k;    		// initialize with the default arguments.
     k.Cluster(data, clusters, assignments);     // make call, filling 'assignments'

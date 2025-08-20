@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // kMeans
 Rcpp::List kMeans(const arma::mat& data, const int& clusters);
-RcppExport SEXP _rcppmlpackexample_kMeans(SEXP dataSEXP, SEXP clustersSEXP) {
+RcppExport SEXP _rcppmlpackexamples_kMeans(SEXP dataSEXP, SEXP clustersSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -25,7 +25,7 @@ END_RCPP
 }
 // linearRegression
 arma::vec linearRegression(const arma::mat& matX, const arma::rowvec& vecY, const double lambda, const bool intercept);
-RcppExport SEXP _rcppmlpackexample_linearRegression(SEXP matXSEXP, SEXP vecYSEXP, SEXP lambdaSEXP, SEXP interceptSEXP) {
+RcppExport SEXP _rcppmlpackexamples_linearRegression(SEXP matXSEXP, SEXP vecYSEXP, SEXP lambdaSEXP, SEXP interceptSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -39,7 +39,7 @@ END_RCPP
 }
 // randomForest
 Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels, double pct, int nclasses, int ntrees);
-RcppExport SEXP _rcppmlpackexample_randomForest(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP nclassesSEXP, SEXP ntreesSEXP) {
+RcppExport SEXP _rcppmlpackexamples_randomForest(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP nclassesSEXP, SEXP ntreesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -54,13 +54,13 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rcppmlpackexample_kMeans", (DL_FUNC) &_rcppmlpackexample_kMeans, 2},
-    {"_rcppmlpackexample_linearRegression", (DL_FUNC) &_rcppmlpackexample_linearRegression, 4},
-    {"_rcppmlpackexample_randomForest", (DL_FUNC) &_rcppmlpackexample_randomForest, 5},
+    {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
+    {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},
+    {"_rcppmlpackexamples_randomForest", (DL_FUNC) &_rcppmlpackexamples_randomForest, 5},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_rcppmlpackexample(DllInfo *dll) {
+RcppExport void R_init_rcppmlpackexamples(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

@@ -18,7 +18,7 @@
 #' data(trees, package="datasets")
 #' cl2 <- kMeans(t(trees),3)
 kMeans <- function(data, clusters) {
-    .Call(`_rcppmlpackexample_kMeans`, data, clusters)
+    .Call(`_rcppmlpackexamples_kMeans`, data, clusters)
 }
 
 #' Run a linear regression (with optional ridge regression)
@@ -45,7 +45,7 @@ kMeans <- function(data, clusters) {
 #' # summary(mlfit)
 #' all.equal(unname(fitted(lmfit)),  as.vector(mlfit))
 linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
-    .Call(`_rcppmlpackexample_linearRegression`, matX, vecY, lambda, intercept)
+    .Call(`_rcppmlpackexamples_linearRegression`, matX, vecY, lambda, intercept)
 }
 
 #' Run a Random Forest Classifier
@@ -67,6 +67,6 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
 #'                     0.3)                      # percentage used for testing
 #' str(res)  # accuracy varies as method is randomized but not seed set here
 randomForest <- function(dataset, labels, pct = 0.3, nclasses = 7L, ntrees = 10L) {
-    .Call(`_rcppmlpackexample_randomForest`, dataset, labels, pct, nclasses, ntrees)
+    .Call(`_rcppmlpackexamples_randomForest`, dataset, labels, pct, nclasses, ntrees)
 }
 

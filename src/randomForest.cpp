@@ -1,5 +1,5 @@
 
-#include "rcppmlpackexample.h"
+#include "rcppmlpackexamples.h"
 
 #include <mlpack.hpp>
 
