@@ -14,6 +14,22 @@
 #' @name covertype_small
 #' @docType data
 #' @source \url{https://www.mlpack.org/datasets/covertype-small.csv.gz}
-#' @reference \url{https://archive.ics.uci.edu/dataset/31/covertype}
+#' @references \url{https://archive.ics.uci.edu/dataset/31/covertype}
+#' @keywords data
+NULL
+
+#' Loan data subset used for default prediction
+#'
+#' A four column data set containing a binary variable \sQuote{Employed} (with zero denoting
+#' unemployment and one employment), a numeric variable \sQuote{Bank Balance}, a numeric
+#' variable \sQuote{Annual Salary} and a binary target variable \sQuote{Defaulted?} (with
+#' zero denoting loan repayment and one denoting default).
+#'
+#' The original source of the data is not documented by mlpack.
+#'
+#' @name loanData
+#' @docType data
+#' @source \url{https://datasets.mlpack.org/LoanDefault.csv}
+#' @references \url{https://archive.ics.uci.edu/dataset/31/covertype}
 #' @keywords data
 NULL

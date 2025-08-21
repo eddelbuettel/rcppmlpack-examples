@@ -14,6 +14,7 @@
 //' @param pct A numeric value for the percentage of data to be retained for the test set
 //' @param nclasses An integer value for the number of a distinct values in \code{labels}
 //' @param ntrees An integer value for the number of trees
+//' @return A list object
 //' @seealso covertype_small
 //' @examples
 //' data(covertype_small)                         # see help(covertype_small)

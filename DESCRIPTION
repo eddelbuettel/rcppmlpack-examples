@@ -1,9 +1,10 @@
 Package: rcppmlpackexamples
 Type: Package
-Title: Example Use of mlpackage from C++ via R
+Title: Example Use of mlpack from C++ via R
 Version: 0.0.1
 Date: 2025-08-16
-Authors@R: person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org")
+Authors@R: c(person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org"),
+             person(given="Authors of mlpack", role = "aut"))
 Description: A Minimal Example Package which demonstrates 'mlpack' Use 'C++' Code from R.
 URL: https://github.com/eddelbuettel/rcppmlpackexamples
 BugReports: https://github.com/eddelbuettel/rcppmlpackexamples/issues

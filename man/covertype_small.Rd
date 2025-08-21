@@ -19,4 +19,7 @@ transformed to the range zero to six by subtracting one from the values found in
 The original source of the data is the US Forest Service, and the complete file is part of the
 UC Irvince machine learning data repository.
 }
+\references{
+\url{https://archive.ics.uci.edu/dataset/31/covertype}
+}
 \keyword{data}

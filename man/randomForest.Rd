@@ -17,6 +17,9 @@ randomForest(dataset, labels, pct = 0.3, nclasses = 7L, ntrees = 10L)
 
 \item{ntrees}{An integer value for the number of trees}
 }
+\value{
+A list object
+}
 \description{
 Run a Random Forest Classifier
 }

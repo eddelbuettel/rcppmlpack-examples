@@ -48,6 +48,31 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
     .Call(`_rcppmlpackexamples_linearRegression`, matX, vecY, lambda, intercept)
 }
 
+#' Predict loan default using a decision tree model
+#'
+#' This functions performs a loan default prediction based on three variables
+#' on employment, bank balance and annual salary to predict loan repayment or
+#' default
+#'
+#' @title loanDefaultPrediction
+#' @param loanDataFeatures A matrix of dimension 3 by N, i.e. transposed relative to
+#' what R uses, with the three explanantory variables
+#' @param loanDataTargets A vector of (integer-valued) binary variables loan repayment
+#' or default
+#' @param pct A numeric variable with the percentage of data to be used for testing,
+#' defaults to 25\%
+#' @return A list obkect with predictions, probabilities, accuracy and a report matrix
+#' @examples
+#' data(loanData)
+#' res <- loanDefaultPrediction(t(as.matrix(loanData[,-4])),  # col 1 to 3, transposed
+#'                              loanData[, 4],                # col 4 is the target
+#'                              0.25)                         # retain 25% for testing
+#' str(res)
+#' res$report
+loanDefaultPrediction <- function(loanDataFeatures, loanDataTargets, pct = 0.25) {
+    .Call(`_rcppmlpackexamples_loanDefaultPrediction`, loanDataFeatures, loanDataTargets, pct)
+}
+
 #' Run a Random Forest Classifier
 #'
 #' This function performs a Random Forest classification on a subset of the
@@ -59,6 +84,7 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
 #' @param pct A numeric value for the percentage of data to be retained for the test set
 #' @param nclasses An integer value for the number of a distinct values in \code{labels}
 #' @param ntrees An integer value for the number of trees
+#' @return A list object
 #' @seealso covertype_small
 #' @examples
 #' data(covertype_small)                         # see help(covertype_small)

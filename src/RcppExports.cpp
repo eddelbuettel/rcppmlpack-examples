@@ -37,6 +37,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// loanDefaultPrediction
+Rcpp::List loanDefaultPrediction(arma::mat& loanDataFeatures, arma::vec& loanDataTargets, double pct);
+RcppExport SEXP _rcppmlpackexamples_loanDefaultPrediction(SEXP loanDataFeaturesSEXP, SEXP loanDataTargetsSEXP, SEXP pctSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat& >::type loanDataFeatures(loanDataFeaturesSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type loanDataTargets(loanDataTargetsSEXP);
+    Rcpp::traits::input_parameter< double >::type pct(pctSEXP);
+    rcpp_result_gen = Rcpp::wrap(loanDefaultPrediction(loanDataFeatures, loanDataTargets, pct));
+    return rcpp_result_gen;
+END_RCPP
+}
 // randomForest
 Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels, double pct, int nclasses, int ntrees);
 RcppExport SEXP _rcppmlpackexamples_randomForest(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP nclassesSEXP, SEXP ntreesSEXP) {
@@ -56,6 +69,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
     {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},
+    {"_rcppmlpackexamples_loanDefaultPrediction", (DL_FUNC) &_rcppmlpackexamples_loanDefaultPrediction, 3},
     {"_rcppmlpackexamples_randomForest", (DL_FUNC) &_rcppmlpackexamples_randomForest, 5},
     {NULL, NULL, 0}
 };
