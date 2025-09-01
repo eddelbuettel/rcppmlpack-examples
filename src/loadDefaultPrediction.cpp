@@ -1,8 +1,7 @@
 
-#include "rcppmlpackexamples.h"
-
+#include <mlpack.h>             				// R package header provided by mlpack R package
+#include <mlpack.hpp>                           // mlpack C++ API
 // See https://github.com/mlpack/examples/blob/master/cpp/decision_tree/loan_default_prediction/
-#include <mlpack.hpp>
 
 using namespace mlpack;
 using namespace mlpack::data;

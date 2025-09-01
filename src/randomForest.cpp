@@ -1,7 +1,6 @@
 
-#include "rcppmlpackexamples.h"
-
-#include <mlpack.hpp>
+#include <mlpack.h>             				// R package header provided by mlpack R package
+#include <mlpack.hpp>                           // mlpack C++ API
 
 //' Run a Random Forest Classifier
 //'
