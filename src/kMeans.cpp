@@ -1,6 +1,5 @@
 
-#include <mlpack.h>             				// R package header provided by mlpack R package
-#include <mlpack.hpp>                           // mlpack C++ API
+#include <mlpack.h>  // R package header provided by mlpack R package
 #include <mlpack/methods/kmeans/kmeans.hpp> 	// particular algorithm used here
 
 //' Run a k-means clustering analysis, returning a list of cluster assignments
@@ -23,7 +22,7 @@
 Rcpp::List kMeans(const arma::mat& data, const int& clusters) {
 
     arma::Row<size_t> assignments; 		// to store results
-    mlpack::kmeans::KMeans<> k;    		// initialize with the default arguments.
+    mlpack::KMeans k;    	           	// initialize with the default arguments.
     k.Cluster(data, clusters, assignments);     // make call, filling 'assignments'
 
     return Rcpp::List::create(Rcpp::Named("clusters") = clusters,

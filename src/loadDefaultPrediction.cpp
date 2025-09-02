@@ -1,6 +1,6 @@
 
-#include <mlpack.h>             				// R package header provided by mlpack R package
-#include <mlpack.hpp>                           // mlpack C++ API
+#include <mlpack.h>  // R package header provided by mlpack R package
+#include <mlpack/methods/decision_tree/decision_tree.hpp> 	// particular algorithm used here
 // See https://github.com/mlpack/examples/blob/master/cpp/decision_tree/loan_default_prediction/
 
 using namespace mlpack;
@@ -101,7 +101,7 @@ Rcpp::List loanDefaultPrediction(arma::mat& loanDataFeatures,
      * mlpack.
      */
     // Create and train Decision Tree model using mlpack.
-    DecisionTree<> dt(Xtrain, Ytrain, 2);
+    DecisionTree dt(Xtrain, Ytrain, 2);
     // Classify the test set using trained model & get the probabilities.
     arma::Row<size_t> output;
     arma::mat probs;

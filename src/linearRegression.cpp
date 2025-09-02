@@ -1,6 +1,5 @@
 
-#include <mlpack.h>             				// R package header provided by mlpack R package
-#include <mlpack.hpp>                           // mlpack C++ API
+#include <mlpack.h>  // R package header provided by mlpack R package
 #include <mlpack/methods/linear_regression/linear_regression.hpp> // particular algorithm used here
 
 //' Run a linear regression (with optional ridge regression)
@@ -33,7 +32,7 @@ arma::vec linearRegression(const arma::mat& matX,
                            const bool intercept = true) {
 
     arma::mat X = matX.t();     // account for arma/mlpack transposed view
-    mlpack::regression::LinearRegression<> lr(X, vecY, lambda, intercept);
+    mlpack::LinearRegression lr(X, vecY, lambda, intercept);
     arma::rowvec fittedValues(vecY.n_elem);
     lr.Predict(X,  fittedValues);
     return fittedValues.t();

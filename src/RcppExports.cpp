@@ -3,6 +3,7 @@
 
 #include "../inst/include/rcppmlpackexamples_types.h"
 #include <RcppArmadillo.h>
+#include <RcppEnsmallen.h>
 #include <Rcpp.h>
 
 using namespace Rcpp;
