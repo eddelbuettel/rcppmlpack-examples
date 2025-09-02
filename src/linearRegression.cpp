@@ -1,6 +1,7 @@
 
-#include <mlpack.h>  // R package header provided by mlpack R package
-#include <mlpack/methods/linear_regression/linear_regression.hpp> // particular algorithm used here
+// R package header provided by mlpack R package, followed by particular method used here
+#include <mlpack.h>
+#include <mlpack/methods/linear_regression/linear_regression.hpp>
 
 //' Run a linear regression (with optional ridge regression)
 //'

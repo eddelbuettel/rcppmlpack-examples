@@ -1,6 +1,7 @@
 
-#include <mlpack.h>  // R package header provided by mlpack R package
-#include <mlpack/methods/random_forest/random_forest.hpp> 	// particular algorithm used here
+// R package header provided by mlpack R package, followed by particular method used here
+#include <mlpack.h>
+#include <mlpack/methods/random_forest/random_forest.hpp>
 
 
 //' Run a Random Forest Classifier

@@ -1,6 +1,7 @@
 
-#include <mlpack.h>  // R package header provided by mlpack R package
-#include <mlpack/methods/kmeans/kmeans.hpp> 	// particular algorithm used here
+// R package header provided by mlpack R package, followed by particular method used here
+#include <mlpack.h>
+#include <mlpack/methods/kmeans/kmeans.hpp>
 
 //' Run a k-means clustering analysis, returning a list of cluster assignments
 //'
