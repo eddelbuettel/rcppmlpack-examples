@@ -2,6 +2,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
-^local/
+^local
 ^\.editorconfig
 .*\.orig$
