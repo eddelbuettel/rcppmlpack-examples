@@ -1,6 +1,7 @@
 
-#include <mlpack.h>             				// R package header provided by mlpack R package
-#include <mlpack.hpp>                           // mlpack C++ API
+#include <mlpack.h>  // R package header provided by mlpack R package
+#include <mlpack/methods/random_forest/random_forest.hpp> 	// particular algorithm used here
+
 
 //' Run a Random Forest Classifier
 //'
@@ -38,7 +39,7 @@ Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels,
                         trainLabels, testLabels,
                         pct /* Percentage of dataset to use for test set. */);
 
-    mlpack::RandomForest<> rf(trainSet, trainLabels,
+    mlpack::RandomForest rf(trainSet, trainLabels,
                               nclasses /* Number of classes in dataset */,
                               ntrees /* number of trees */);
     // Predict the labels of the test points.,
