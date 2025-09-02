@@ -29,6 +29,9 @@ jobs:
       - name: Dependencies
         run: ./run.sh install_all
 
+      - name: RcppArmadillo from GitHub
+        run: ./run.sh install_github rcppcore/rcpparmadillo@bugfix/restore_default_path
+
       - name: Test
         run: ./run.sh run_tests
 
