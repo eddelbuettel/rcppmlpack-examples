@@ -50,7 +50,7 @@ GPL (>= 2) for this package
 MIT for mlpack
 
 
-[mlpack]: https://mlpack.com/
+[mlpack]: https://mlpack.org/
 [rpackage]: https://cran.r-project.org/package=mlpack
 [cran]: https://cran.r-project.org
 [mlpack-examples]: https://github.com/mlpack/examples
