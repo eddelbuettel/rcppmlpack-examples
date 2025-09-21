@@ -61,7 +61,7 @@ Rcpp::NumericMatrix makeReportMatrix(const arma::Row<size_t>& yPreds, const arma
 //' or default
 //' @param pct A numeric variable with the percentage of data to be used for testing,
 //' defaults to 25\%
-//' @return A list obkect with predictions, probabilities, accuracy and a report matrix
+//' @return A list object with predictions, probabilities, accuracy and a report matrix
 //' @examples
 //' data(loanData)
 //' res <- loanDefaultPrediction(t(as.matrix(loanData[,-4])),  # col 1 to 3, transposed

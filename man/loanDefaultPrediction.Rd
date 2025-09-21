@@ -17,7 +17,7 @@ or default}
 defaults to 25\%}
 }
 \value{
-A list obkect with predictions, probabilities, accuracy and a report matrix
+A list object with predictions, probabilities, accuracy and a report matrix
 }
 \description{
 Predict loan default using a decision tree model
