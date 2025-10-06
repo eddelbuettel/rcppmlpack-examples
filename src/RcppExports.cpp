@@ -13,6 +13,21 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// adaBoost
+Rcpp::List adaBoost(const arma::mat dataset, const arma::vec labels, int iterations, double tolerance, int perceptronIter);
+RcppExport SEXP _rcppmlpackexamples_adaBoost(SEXP datasetSEXP, SEXP labelsSEXP, SEXP iterationsSEXP, SEXP toleranceSEXP, SEXP perceptronIterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat >::type dataset(datasetSEXP);
+    Rcpp::traits::input_parameter< const arma::vec >::type labels(labelsSEXP);
+    Rcpp::traits::input_parameter< int >::type iterations(iterationsSEXP);
+    Rcpp::traits::input_parameter< double >::type tolerance(toleranceSEXP);
+    Rcpp::traits::input_parameter< int >::type perceptronIter(perceptronIterSEXP);
+    rcpp_result_gen = Rcpp::wrap(adaBoost(dataset, labels, iterations, tolerance, perceptronIter));
+    return rcpp_result_gen;
+END_RCPP
+}
 // kMeans
 Rcpp::List kMeans(const arma::mat& data, const int& clusters);
 RcppExport SEXP _rcppmlpackexamples_kMeans(SEXP dataSEXP, SEXP clustersSEXP) {
@@ -69,6 +84,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_rcppmlpackexamples_adaBoost", (DL_FUNC) &_rcppmlpackexamples_adaBoost, 5},
     {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
     {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},
     {"_rcppmlpackexamples_loanDefaultPrediction", (DL_FUNC) &_rcppmlpackexamples_loanDefaultPrediction, 3},
