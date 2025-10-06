@@ -6,18 +6,17 @@ on:
   push:
   pull_request:
 
-env:
-  _R_CHECK_FORCE_SUGGESTS_: "false"
-
 jobs:
   ci:
     strategy:
       matrix:
         include:
-          #- {os: macOS-latest}
-          - {os: ubuntu-latest}
+          - { name: container, os: ubuntu-latest, container: rocker/r2u4ci }
+          #- { name: macos,     os: macos-latest }
+          #- { name: ubuntu,    os: ubuntu-latest }
 
     runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container }}
 
     steps:
       - name: Checkout
@@ -25,6 +24,8 @@ jobs:
 
       - name: Setup
         uses: eddelbuettel/github-actions/r-ci@master
+        with:
+          dev_version: 'TRUE'
 
       - name: Dependencies
         run: ./run.sh install_all

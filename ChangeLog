@@ -1,3 +1,9 @@
+2025-10-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/adaboost.cpp (adaBoost): New (simple) example for AdaBoost
+
+	* .github/workflows/ci.yaml (jobs): Switch to r2u4ci container
+
 2025-09-21  Dirk Eddelbuettel  <edd@debian.org>
 
 	* README.md: Additional badges and expanded installation instruction
