@@ -32,15 +32,12 @@ Rcpp::List adaBoost(const arma::mat dataset, const arma::vec labels,
     int numClasses = arma::max(labelsvec) + 1;
     //Rcpp::Rcout << "Num classes: " << numClasses << std::endl;
     //dataset.print("dataset");
-    labelsvec.print("labelsvec");
-    //Rcpp::Rcout << "A\n";
+    //labelsvec.print("labelsvec");
     double ztProduct = a.Train(dataset, labelsvec, numClasses, iterations, tolerance, perceptronIter);
-    //Rcpp::Rcout << "B\n";
 
     arma::Row<size_t> predictedLabels;
     a.Classify(dataset, predictedLabels);
-
-    //Rcpp::Rcout << "C\n";
+    //predictedLabels.print("predicted");
     size_t countError = arma::accu(labelsvec != predictedLabels);
     double hammingLoss = (double) countError / labels.n_cols;
 
