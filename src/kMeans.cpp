@@ -22,8 +22,8 @@
 // [[Rcpp::export]]
 Rcpp::List kMeans(const arma::mat& data, const int& clusters) {
 
-    arma::Row<size_t> assignments; 		// to store results
-    mlpack::KMeans k;    	           	// initialize with the default arguments.
+    arma::Row<size_t> assignments; 				// to store results
+    mlpack::KMeans k;    	           			// initialize with the default arguments.
     k.Cluster(data, clusters, assignments);     // make call, filling 'assignments'
 
     return Rcpp::List::create(Rcpp::Named("clusters") = clusters,

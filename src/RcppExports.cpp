@@ -67,6 +67,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// logisticRegression
+Rcpp::List logisticRegression(const arma::mat& data, const arma::rowvec& labels, const double lambda);
+RcppExport SEXP _rcppmlpackexamples_logisticRegression(SEXP dataSEXP, SEXP labelsSEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat& >::type data(dataSEXP);
+    Rcpp::traits::input_parameter< const arma::rowvec& >::type labels(labelsSEXP);
+    Rcpp::traits::input_parameter< const double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(logisticRegression(data, labels, lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
 // randomForest
 Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels, double pct, int nclasses, int ntrees);
 RcppExport SEXP _rcppmlpackexamples_randomForest(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP nclassesSEXP, SEXP ntreesSEXP) {
@@ -88,6 +101,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
     {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},
     {"_rcppmlpackexamples_loanDefaultPrediction", (DL_FUNC) &_rcppmlpackexamples_loanDefaultPrediction, 3},
+    {"_rcppmlpackexamples_logisticRegression", (DL_FUNC) &_rcppmlpackexamples_logisticRegression, 3},
     {"_rcppmlpackexamples_randomForest", (DL_FUNC) &_rcppmlpackexamples_randomForest, 5},
     {NULL, NULL, 0}
 };

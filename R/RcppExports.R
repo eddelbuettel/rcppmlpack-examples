@@ -13,7 +13,7 @@
 #' @examples
 #' data(iris)
 #' X <- t(as.matrix(iris[,1:4]))
-#' y <- as.integer(iris[,5]) - 1
+#' y <- as.integer(iris[,5]) - 1   # mlpack prefers {0, 1, 2}
 #' adaBoost(X, y)
 adaBoost <- function(dataset, labels, iterations = 100L, tolerance = 2e-10, perceptronIter = 400L) {
     .Call(`_rcppmlpackexamples_adaBoost`, dataset, labels, iterations, tolerance, perceptronIter)
@@ -89,6 +89,25 @@ linearRegression <- function(matX, vecY, lambda = 0.0, intercept = TRUE) {
 #' res$report
 loanDefaultPrediction <- function(loanDataFeatures, loanDataTargets, pct = 0.25) {
     .Call(`_rcppmlpackexamples_loanDefaultPrediction`, loanDataFeatures, loanDataTargets, pct)
+}
+
+#' Run a logistic regression returning classification
+#'
+#' This function performs a logistic regression on the given data set.
+#'
+#' @title Run logistic regression
+#' @param data A matrix of data values
+#' @param labels A vector of class labels
+#' @param lambda An optional L2 regularization parameter, defaults to zero
+#' @return A list with predictions, probabilities and parmeters
+#' @examples
+#' data(logisticRegression)
+#' X <- as.matrix(logisticsData[, 1:2])
+#' y <- as.matrix(logisticsData[, 3])
+#' res <- logisticRegression(X, y)
+#' res$parameters
+logisticRegression <- function(data, labels, lambda = 0.0) {
+    .Call(`_rcppmlpackexamples_logisticRegression`, data, labels, lambda)
 }
 
 #' Run a Random Forest Classifier

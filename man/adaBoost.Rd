@@ -32,6 +32,6 @@ Run AdaBoost using a simple Perceptron model as the weak learner
 \examples{
 data(iris)
 X <- t(as.matrix(iris[,1:4]))
-y <- as.integer(iris[,5]) - 1
+y <- as.integer(iris[,5]) - 1   # mlpack prefers {0, 1, 2}
 adaBoost(X, y)
 }

@@ -33,3 +33,11 @@ NULL
 #' @references \url{https://archive.ics.uci.edu/dataset/31/covertype}
 #' @keywords data
 NULL
+
+#' Logistic regression example data set
+#'
+#' A three column (synthetic) data set to illustrate logistic regression.
+#' @name logisticsData
+#' @docType data
+#' @keywords data
+NULL
