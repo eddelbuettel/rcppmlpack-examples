@@ -1,8 +1,8 @@
 Package: rcppmlpackexamples
 Type: Package
 Title: Example Use of 'mlpack' from C++ via R
-Version: 0.0.1
-Date: 2025-09-14
+Version: 0.0.1.1
+Date: 2025-10-28
 Authors@R: c(person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org"),
              person(given="Authors of mlpack", role = "aut"),
              person("Constantinos", "Giachalis", role = "ctb"))

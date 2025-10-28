@@ -1,5 +1,7 @@
 2025-10-28  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Roll micro version and date
+
 	* src/logisticRegression.cpp: New (simple) example
 	* data/logisticRegression.RData: Example data
 	* man/logisticRegression.Rd: Documentation
