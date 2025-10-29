@@ -5,7 +5,10 @@
 
 //' Run a logistic regression returning classification
 //'
-//' This function performs a logistic regression on the given data set.
+//' This function performs a logistic regression on the given data set. The data set
+//' is synthetic and follows an on-line example source 2025-10-28 which gave no direct
+//' source (as an example provided by Google / Gemini); it is now included in the
+//' \code{examples} directory of the package
 //'
 //' @title Run logistic regression
 //' @param data A matrix of data values
@@ -14,8 +17,8 @@
 //' @return A list with predictions, probabilities and parmeters
 //' @examples
 //' data(logisticRegression)
-//' X <- as.matrix(logisticsData[, 1:2])
-//' y <- as.matrix(logisticsData[, 3])
+//' X <- as.matrix(logisticRegressionData[, 1:2])
+//' y <- as.matrix(logisticRegressionData[, 3])
 //' res <- logisticRegression(X, y)
 //' res$parameters
 // [[Rcpp::export]]

@@ -37,7 +37,7 @@ NULL
 #' Logistic regression example data set
 #'
 #' A three column (synthetic) data set to illustrate logistic regression.
-#' @name logisticsData
+#' @name logisticRegressionData
 #' @docType data
 #' @keywords data
 NULL
