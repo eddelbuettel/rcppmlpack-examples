@@ -41,8 +41,8 @@ Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels,
                         pct /* Percentage of dataset to use for test set. */);
 
     mlpack::RandomForest rf(trainSet, trainLabels,
-                              nclasses /* Number of classes in dataset */,
-                              ntrees /* number of trees */);
+                            nclasses /* Number of classes in dataset */,
+                            ntrees /* number of trees */);
     // Predict the labels of the test points.,
     arma::Row<size_t> output;
     rf.Classify(testSet, output);
