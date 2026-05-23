@@ -28,6 +28,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// decisionTree
+Rcpp::List decisionTree(const arma::mat dataset, const arma::ivec labels, double pct, int min_leaf_size, double minimum_gain_split, int maximum_depth);
+RcppExport SEXP _rcppmlpackexamples_decisionTree(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP min_leaf_sizeSEXP, SEXP minimum_gain_splitSEXP, SEXP maximum_depthSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat >::type dataset(datasetSEXP);
+    Rcpp::traits::input_parameter< const arma::ivec >::type labels(labelsSEXP);
+    Rcpp::traits::input_parameter< double >::type pct(pctSEXP);
+    Rcpp::traits::input_parameter< int >::type min_leaf_size(min_leaf_sizeSEXP);
+    Rcpp::traits::input_parameter< double >::type minimum_gain_split(minimum_gain_splitSEXP);
+    Rcpp::traits::input_parameter< int >::type maximum_depth(maximum_depthSEXP);
+    rcpp_result_gen = Rcpp::wrap(decisionTree(dataset, labels, pct, min_leaf_size, minimum_gain_split, maximum_depth));
+    return rcpp_result_gen;
+END_RCPP
+}
 // kMeans
 Rcpp::List kMeans(const arma::mat& data, const int& clusters);
 RcppExport SEXP _rcppmlpackexamples_kMeans(SEXP dataSEXP, SEXP clustersSEXP) {
@@ -98,6 +114,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rcppmlpackexamples_adaBoost", (DL_FUNC) &_rcppmlpackexamples_adaBoost, 5},
+    {"_rcppmlpackexamples_decisionTree", (DL_FUNC) &_rcppmlpackexamples_decisionTree, 6},
     {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
     {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},
     {"_rcppmlpackexamples_loanDefaultPrediction", (DL_FUNC) &_rcppmlpackexamples_loanDefaultPrediction, 3},

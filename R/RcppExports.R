@@ -19,6 +19,25 @@ adaBoost <- function(dataset, labels, iterations = 100L, tolerance = 2e-10, perc
     .Call(`_rcppmlpackexamples_adaBoost`, dataset, labels, iterations, tolerance, perceptronIter)
 }
 
+#' Run decisionTree classifier
+#'
+#' @title Run a decisionTree classification
+#' @param dataset A matrix of explanatory variables, i.e. \dQuote{features}
+#' @param labels A vector of the dependent variable as integer values, i.e. \dQuote{labels}
+#' @param pct A numeric value for the percentage of data to be retained for the test set
+#' @param min_leaf_size An integer value with the minimum number of elements per leaf
+#' @param minimum_gain_split A double with the gain needed to further split the tree
+#' @param maximum_depth An integer with the maximum tree depth, default zero means unlimited
+#' @return A list object
+#' @examples
+#' data(iris)
+#' X <- t(as.matrix(iris[,1:4]))
+#' y <- as.integer(iris[,5]) - 1   # mlpack prefers {0, 1, 2}
+#' decisionTree(X, y)
+decisionTree <- function(dataset, labels, pct = 0.3, min_leaf_size = 10L, minimum_gain_split = 1e-7, maximum_depth = 0L) {
+    .Call(`_rcppmlpackexamples_decisionTree`, dataset, labels, pct, min_leaf_size, minimum_gain_split, maximum_depth)
+}
+
 #' Run a k-means clustering analysis, returning a list of cluster assignments
 #'
 #' This function performs a k-means clustering analysis on the given data set.
@@ -131,7 +150,7 @@ logisticRegression <- function(data, labels, lambda = 0.0) {
 #' res <- randomForest(covertype_small[-55,],    # features (already transposed)
 #'                     covertype_small[55,],     # labels now in [0, 6] range
 #'                     0.3)                      # percentage used for testing
-#' str(res)  # accuracy varies as method is randomized but not seed set here
+#' str(res)  # accuracy varies as method is randomized but no seed set here
 randomForest <- function(dataset, labels, pct = 0.3, nclasses = 7L, ntrees = 10L) {
     .Call(`_rcppmlpackexamples_randomForest`, dataset, labels, pct, nclasses, ntrees)
 }

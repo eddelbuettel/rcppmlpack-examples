@@ -22,7 +22,7 @@
 //' res <- randomForest(covertype_small[-55,],    # features (already transposed)
 //'                     covertype_small[55,],     # labels now in [0, 6] range
 //'                     0.3)                      # percentage used for testing
-//' str(res)  # accuracy varies as method is randomized but not seed set here
+//' str(res)  # accuracy varies as method is randomized but no seed set here
 // [[Rcpp::export]]
 Rcpp::List randomForest(const arma::mat dataset, const arma::vec labels,
                         double pct = 0.3, int nclasses = 7, int ntrees = 10) {

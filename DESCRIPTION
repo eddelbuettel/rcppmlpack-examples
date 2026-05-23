@@ -15,4 +15,4 @@ Depends: R (>= 3.5.0)
 Imports: Rcpp (>= 1.1.0)
 LinkingTo: Rcpp, RcppArmadillo (>= 15.0.2-1), RcppEnsmallen, mlpack (>= 4.6.3)
 Encoding: UTF-8
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.0.0
