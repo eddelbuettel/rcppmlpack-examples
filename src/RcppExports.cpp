@@ -28,6 +28,15 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// datasetExample
+void datasetExample();
+RcppExport SEXP _rcppmlpackexamples_datasetExample() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    datasetExample();
+    return R_NilValue;
+END_RCPP
+}
 // decisionTree
 Rcpp::List decisionTree(const arma::mat dataset, const arma::ivec labels, double pct, int min_leaf_size, double minimum_gain_split, int maximum_depth);
 RcppExport SEXP _rcppmlpackexamples_decisionTree(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP min_leaf_sizeSEXP, SEXP minimum_gain_splitSEXP, SEXP maximum_depthSEXP) {
@@ -114,6 +123,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rcppmlpackexamples_adaBoost", (DL_FUNC) &_rcppmlpackexamples_adaBoost, 5},
+    {"_rcppmlpackexamples_datasetExample", (DL_FUNC) &_rcppmlpackexamples_datasetExample, 0},
     {"_rcppmlpackexamples_decisionTree", (DL_FUNC) &_rcppmlpackexamples_decisionTree, 6},
     {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
     {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},

@@ -19,6 +19,10 @@ adaBoost <- function(dataset, labels, iterations = 100L, tolerance = 2e-10, perc
     .Call(`_rcppmlpackexamples_adaBoost`, dataset, labels, iterations, tolerance, perceptronIter)
 }
 
+datasetExample <- function() {
+    invisible(.Call(`_rcppmlpackexamples_datasetExample`))
+}
+
 #' Run decisionTree classifier
 #'
 #' @title Run a decisionTree classification
