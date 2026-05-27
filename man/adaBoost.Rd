@@ -4,13 +4,8 @@
 \alias{adaBoost}
 \title{An AdaBoost classification}
 \usage{
-adaBoost(
-  dataset,
-  labels,
-  iterations = 100L,
-  tolerance = 2e-10,
-  perceptronIter = 400L
-)
+adaBoost(dataset, labels, iterations = 100L, tolerance = 2e-10,
+  perceptronIter = 400L)
 }
 \arguments{
 \item{dataset}{A matrix of explanatory variables, i.e. \dQuote{features}}

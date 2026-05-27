@@ -4,14 +4,8 @@
 \alias{decisionTree}
 \title{Run a decisionTree classification}
 \usage{
-decisionTree(
-  dataset,
-  labels,
-  pct = 0.3,
-  min_leaf_size = 10L,
-  minimum_gain_split = 1e-07,
-  maximum_depth = 0L
-)
+decisionTree(dataset, labels, pct = 0.3, min_leaf_size = 10L,
+  minimum_gain_split = 1e-07, maximum_depth = 0L)
 }
 \arguments{
 \item{dataset}{A matrix of explanatory variables, i.e. \dQuote{features}}

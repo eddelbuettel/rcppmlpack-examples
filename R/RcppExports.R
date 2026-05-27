@@ -19,6 +19,9 @@ adaBoost <- function(dataset, labels, iterations = 100L, tolerance = 2e-10, perc
     .Call(`_rcppmlpackexamples_adaBoost`, dataset, labels, iterations, tolerance, perceptronIter)
 }
 
+#' Simple example of loading categorical data via 'mlpack'
+#'
+#' @return Nothing is returned, the function is invoked for its side effect.
 datasetExample <- function() {
     invisible(.Call(`_rcppmlpackexamples_datasetExample`))
 }

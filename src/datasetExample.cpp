@@ -1,8 +1,10 @@
 
-// R package header provided by mlpack R package, followed by particular method used here
+// R package header provided by mlpack R package
 #include <mlpack.h>
 
-// Unexported example of loading categorical data.
+//' Simple example of loading categorical data via 'mlpack'
+//'
+//' @return Nothing is returned, the function is invoked for its side effect.
 // [[Rcpp::export]]
 void datasetExample() {
     // cf https://mlpack.org/doc/user/load_save.html#mixed-categorical-data
@@ -19,10 +21,10 @@ void datasetExample() {
     mlpack::Load("covertype.train.arff", dataset, opts);
 
     // Print information about the data.
-    std::cout << "The data in 'covertype.train.arff' has: " << std::endl;
-    std::cout << " - " << dataset.n_cols << " points." << std::endl;
-    std::cout << " - " << opts.DatasetInfo().Dimensionality() << " dimensions."
-              << std::endl;
+    Rcpp::Rcout << "The data in 'covertype.train.arff' has: " << std::endl;
+    Rcpp::Rcout << " - " << dataset.n_cols << " points." << std::endl;
+    Rcpp::Rcout << " - " << opts.DatasetInfo().Dimensionality() << " dimensions."
+                << std::endl;
 
     arma::Row<size_t> labels;
     // We need to have a second options, since we are loading two different
@@ -36,10 +38,10 @@ void datasetExample() {
     // Print information about each dimension.
     for (size_t d = 0; d < opts.DatasetInfo().Dimensionality(); ++d) {
         if (opts.DatasetInfo().Type(d) == mlpack::Datatype::categorical) {
-            std::cout << " - Dimension " << d << " is categorical with "
-                      << opts.DatasetInfo().NumMappings(d) << " categories." << std::endl;
+            Rcpp::Rcout << " - Dimension " << d << " is categorical with "
+                        << opts.DatasetInfo().NumMappings(d) << " categories." << std::endl;
         } else {
-            std::cout << " - Dimension " << d << " is numeric." << std::endl;
+            Rcpp::Rcout << " - Dimension " << d << " is numeric." << std::endl;
         }
     }
 
