@@ -1,3 +1,10 @@
+2026-06-10  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/hoeffdingTree.cpp: Added
+	* man/hoeffdingTrees.Rd: Idem
+	* src/RcppExports.cpp: Regenerated
+	* R/RcppExports.R: Idem
+
 2026-05-27  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/datasetExample.cpp: Renamed file, added documentation stanza

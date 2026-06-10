@@ -45,6 +45,27 @@ decisionTree <- function(dataset, labels, pct = 0.3, min_leaf_size = 10L, minimu
     .Call(`_rcppmlpackexamples_decisionTree`, dataset, labels, pct, min_leaf_size, minimum_gain_split, maximum_depth)
 }
 
+#' Run a Hoeffding Trees (Batch) Classifier
+#'
+#' This function performs a Hoeffding Trees classification.
+#'
+#' @title Run a Random Forest classificatio
+#' @param dataset A matrix of explanatory variables, i.e. \dQuote{features}
+#' @param labels A vector of the dependent variable as integer values, i.e. \dQuote{labels}
+#' @param pct A numeric value for the percentage of data to be retained for the test set
+#' @param nclasses An integer value for the number of a distinct values in \code{labels}
+#' @return A list object
+#' @seealso covertype_small
+#' @examples
+#' data(covertype_small)                           # see help(covertype_small)
+#' res <- hoeffdingTrees(covertype_small[-55,],    # features (already transposed)
+#'                       covertype_small[55,],     # labels now in [0, 6] range
+#'                       0.3)                      # percentage used for testing
+#' str(res)  # accuracy varies as method is randomized but no seed set here
+hoeffdingTrees <- function(dataset, labels, pct = 0.3, nclasses = 7L) {
+    .Call(`_rcppmlpackexamples_hoeffdingTrees`, dataset, labels, pct, nclasses)
+}
+
 #' Run a k-means clustering analysis, returning a list of cluster assignments
 #'
 #' This function performs a k-means clustering analysis on the given data set.

@@ -53,6 +53,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// hoeffdingTrees
+Rcpp::List hoeffdingTrees(const arma::mat dataset, const arma::vec labels, double pct, int nclasses);
+RcppExport SEXP _rcppmlpackexamples_hoeffdingTrees(SEXP datasetSEXP, SEXP labelsSEXP, SEXP pctSEXP, SEXP nclassesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat >::type dataset(datasetSEXP);
+    Rcpp::traits::input_parameter< const arma::vec >::type labels(labelsSEXP);
+    Rcpp::traits::input_parameter< double >::type pct(pctSEXP);
+    Rcpp::traits::input_parameter< int >::type nclasses(nclassesSEXP);
+    rcpp_result_gen = Rcpp::wrap(hoeffdingTrees(dataset, labels, pct, nclasses));
+    return rcpp_result_gen;
+END_RCPP
+}
 // kMeans
 Rcpp::List kMeans(const arma::mat& data, const int& clusters);
 RcppExport SEXP _rcppmlpackexamples_kMeans(SEXP dataSEXP, SEXP clustersSEXP) {
@@ -125,6 +139,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rcppmlpackexamples_adaBoost", (DL_FUNC) &_rcppmlpackexamples_adaBoost, 5},
     {"_rcppmlpackexamples_datasetExample", (DL_FUNC) &_rcppmlpackexamples_datasetExample, 0},
     {"_rcppmlpackexamples_decisionTree", (DL_FUNC) &_rcppmlpackexamples_decisionTree, 6},
+    {"_rcppmlpackexamples_hoeffdingTrees", (DL_FUNC) &_rcppmlpackexamples_hoeffdingTrees, 4},
     {"_rcppmlpackexamples_kMeans", (DL_FUNC) &_rcppmlpackexamples_kMeans, 2},
     {"_rcppmlpackexamples_linearRegression", (DL_FUNC) &_rcppmlpackexamples_linearRegression, 4},
     {"_rcppmlpackexamples_loanDefaultPrediction", (DL_FUNC) &_rcppmlpackexamples_loanDefaultPrediction, 3},
